@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,21 +30,24 @@
 </template>
 
 <script>
-// import { butter } from '@/buttercms'
+// import Butter from 'buttercms';
 export default {
   name: 'HelloWorld',
   methods: {
     async getPage() {
-        // butter.page.retrieve('*', 'homepage')
-        //   .then((res) => {
-        //     console.log(res.data.data)
-        //     this.page = res.data.data
-        //   }).catch((res) => {
-        //     console.log(res)
-        //   })
+      // const butter = Butter('683e8c895d9201fa3f738a50cb6e545e69ebcce8');
+      const url = "http://staging.buttercms.com/v2/pages/*/knowledge-base/?preview=1&auth_token=683e8c895d9201fa3f738a50cb6e545e69ebcce8"
+        const response = await fetch(url)
+        const responseData = await response.json();
+        
+        console.log(responseData)
+        console.log(response.body);
 
         // const response = await fetch('https://staging.buttercms.com/v2/pages/*/')
       }
+  },
+  created(){
+    return this.getPage()
   }
 }
 </script>
