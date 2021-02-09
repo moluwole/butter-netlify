@@ -8,7 +8,7 @@ import KnowledgeBase from './views/KnowledgeBase';
 import "buefy/dist/buefy.css";
 
 const routes = [
-  {'path': '/knowledge-base', component: KnowledgeBase}
+  {'path': '/knowledgeBase', component: KnowledgeBase}
 ]
 
 const router = new VueRouter({
