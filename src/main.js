@@ -1,11 +1,14 @@
 import Vue from 'vue'
+import buefy from "buefy";
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
-import HelloWorld from './components/HelloWorld';
+import KnowledgeBase from './views/KnowledgeBase';
+
+import "buefy/dist/buefy.css";
 
 const routes = [
-  {'path': '/knowledge-base', component: HelloWorld}
+  {'path': '/knowledge-base', component: KnowledgeBase}
 ]
 
 const router = new VueRouter({
@@ -16,6 +19,11 @@ const router = new VueRouter({
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
+
+Vue.use(buefy, {
+  defaultIconComponent: "vue-fontawesome",
+  defaultIconPack: "fas",
+});
 
 new Vue({
   router,
