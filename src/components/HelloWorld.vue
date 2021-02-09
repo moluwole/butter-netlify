@@ -31,10 +31,21 @@
 </template>
 
 <script>
+// import { butter } from '@/buttercms'
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  methods: {
+    async getPage() {
+        // butter.page.retrieve('*', 'homepage')
+        //   .then((res) => {
+        //     console.log(res.data.data)
+        //     this.page = res.data.data
+        //   }).catch((res) => {
+        //     console.log(res)
+        //   })
+
+        // const response = await fetch('https://staging.buttercms.com/v2/pages/*/')
+      }
   }
 }
 </script>
